@@ -1,0 +1,162 @@
+:root {
+  --bg:#0f1724;
+  --card:#0b1220;
+  --accent:#ff3b30;
+  --muted:#94a3b8;
+  --glass: rgba(255,255,255,0.04);
+  --white:#fff;
+  --success:#22c55e;
+}
+
+body {
+  margin: 0;
+  background: #1e263b;
+  font-family: Inter, sans-serif;
+  color: var(--white);
+}
+
+/* HEADER */
+.site-header {
+  width: 100%;
+  padding: 16px 24px;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg,#ff7a6b,var(--accent));
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 800;
+  font-size: 18px;
+}
+
+header .app-name {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+header .app-sub {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* MAIN CONTENT */
+.content {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* LEFT & RIGHT PANELS */
+.left-section {
+  flex: 1 1 100%;
+  max-width: 350px;
+}
+
+.right-section {
+  flex: 2 1 100%;
+}
+
+/* BALANCE CARD */
+.balance-card {
+  background: var(--glass);
+  border-radius: 16px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* QUICK GRID */
+.quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.quick {
+  background: var(--card);
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  transition: 0.2s;
+}
+
+.quick:hover { background: rgba(255,255,255,0.1); }
+
+/* BIG QR BUTTON */
+.qr-quick .qr-icon {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+.qr-quick label {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.quick label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* PROMOTIONS & TRANSACTIONS */
+.card-item, .tx {
+  margin-bottom: 12px;
+}
+
+/* RESPONSIVE MEDIA QUERY FOR MOBILE */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .left-section, .right-section {
+    max-width: 100%;
+  }
+
+  .quick-grid {
+    grid-template-columns: 1fr; /* one per row on mobile */
+  }
+
+  .qr-quick .qr-icon {
+    width: 150px;
+    height: 150px;
+  }
+
+  .balance-card {
+    padding: 16px;
+  }
+
+  .header-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
